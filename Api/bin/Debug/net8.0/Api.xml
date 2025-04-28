@@ -1,0 +1,215 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Api</name>
+    </assembly>
+    <members>
+        <member name="T:Api.Controllers.AuthenticationController">
+            <summary>
+            Controller of Authentication
+            </summary>
+        </member>
+        <member name="M:Api.Controllers.AuthenticationController.#ctor(MediatR.ISender)">
+            <summary>
+            Constructor
+            </summary>
+        </member>
+        <member name="M:Api.Controllers.AuthenticationController.Authentication(Application.UseCases.GenerarToken.TokenCreateRequest)">
+             <summary>
+             Metodo de autenticacion      
+             </summary>
+              
+             <returns></returns>
+             /// <remarks>
+             Request example:
+              
+                 {
+                    "Email": "prueba@correo.com",
+                    "Password": "cHJ1RUJB"
+             
+                 }
+            
+             </remarks>
+        </member>
+        <member name="M:Api.Controllers.AuthenticationController.CreateEstudiante(Application.UseCases.RegistrarUsuarioEstudiante.UsuarioEstudianteRequest)">
+             <summary>
+             Metodo para la creacion del usuario estudiante estudiante sin token      
+             </summary>
+            
+             <returns></returns>
+        </member>
+        <member name="M:Api.Controllers.AuthenticationController.CreateProfesor(Application.UseCases.RegistrarUsuarioProfesor.UsuarioProfesorRequest)">
+             <summary>
+             Metodo para la creacion del usuario profesor estudiante sin token      
+             </summary>
+            
+             <returns></returns>
+        </member>
+        <member name="T:Api.Controllers.CursoController">
+            <summary>
+            Controller of rol
+            </summary>
+        </member>
+        <member name="M:Api.Controllers.CursoController.#ctor(MediatR.ISender)">
+            <summary>
+            Constructor
+            </summary>
+        </member>
+        <member name="M:Api.Controllers.CursoController.GetAll">
+            <summary>
+            Metodo de para obtener todos los cursos      
+            </summary>
+             
+        </member>
+        <member name="T:Api.Controllers.EstudianteController">
+            <summary>
+            Controller of rol
+            </summary>
+        </member>
+        <member name="M:Api.Controllers.EstudianteController.#ctor(MediatR.ISender)">
+            <summary>
+            Constructor
+            </summary>
+        </member>
+        <member name="M:Api.Controllers.EstudianteController.GetAllByIdEstudiante(System.Int32)">
+            <summary>
+            Metodo para obtener todas las materias por IdUsuario
+            </summary>
+        </member>
+        <member name="M:Api.Controllers.EstudianteController.GetAllMateriasEstudiantes(System.Int32)">
+            <summary>
+            Metodo para obtener por materia todos estudiantes   
+            </summary>
+        </member>
+        <member name="T:Api.Controllers.InscripcionMateriaController">
+            <summary>
+            Controlador de materia profesor
+            </summary>
+        </member>
+        <member name="M:Api.Controllers.InscripcionMateriaController.#ctor(MediatR.ISender)">
+            <summary>
+            Constructor
+            </summary>
+        </member>
+        <member name="M:Api.Controllers.InscripcionMateriaController.Create(Application.UseCases.AsignarMateriasEstudiante.AsignarMateriaRequest)">
+            <summary>
+            Metodo para la creacion de materias de un estudiante      
+            </summary>
+        </member>
+        <member name="T:Api.Controllers.MateriaController">
+            <summary>
+            Controller of rol
+            </summary>
+        </member>
+        <member name="M:Api.Controllers.MateriaController.#ctor(MediatR.ISender)">
+            <summary>
+            Constructor
+            </summary>
+        </member>
+        <member name="M:Api.Controllers.MateriaController.GetAll">
+            <summary>
+            Metodo para obtener todas las materias      
+            </summary>
+             
+        </member>
+        <member name="M:Api.Controllers.MateriaController.GetAllMaterias">
+            <summary>
+            Metodo para obtener  las materias  que el estudiante puede registrar    
+            </summary>
+             
+        </member>
+        <member name="T:Api.Controllers.MateriaProfesorController">
+            <summary>
+            Controlador de materia profesor
+            </summary>
+        </member>
+        <member name="M:Api.Controllers.MateriaProfesorController.#ctor(MediatR.ISender)">
+            <summary>
+            Constructor
+            </summary>
+        </member>
+        <member name="M:Api.Controllers.MateriaProfesorController.Create(Application.UseCases.CrearMateriasProfesor.MateriaProfesorRequest)">
+            <summary>
+            Metodo para la creacion materias de un profesor      
+            </summary>
+        </member>
+        <member name="T:Api.Controllers.ProfesorController">
+            <summary>
+            Controller of rol
+            </summary>
+        </member>
+        <member name="M:Api.Controllers.ProfesorController.#ctor(MediatR.ISender)">
+            <summary>
+            Constructor
+            </summary>
+        </member>
+        <member name="M:Api.Controllers.ProfesorController.GetAllEstudiantesMateria(System.Int32,System.Int32)">
+            <summary>
+            Metodo para obtener las los nombres de los estudiantes por materia y profesor
+            </summary>
+             
+        </member>
+        <member name="M:Api.Controllers.ProfesorController.GetAllMaterias(System.Int32)">
+            <summary>
+            Metodo para obtener las los nombres de los estudiantes por materia y profesor
+            </summary>
+             
+        </member>
+        <member name="T:Api.Controllers.RolController">
+            <summary>
+            Controller of rol
+            </summary>
+        </member>
+        <member name="M:Api.Controllers.RolController.#ctor(MediatR.ISender)">
+            <summary>
+            Constructor
+            </summary>
+        </member>
+        <member name="M:Api.Controllers.RolController.GetAll">
+            <summary>
+            Metodo para obtener los roles del sistema    
+            </summary>
+             
+        </member>
+        <member name="T:Api.Middlewares.ExceptionHandlingMiddleware">
+            <summary>
+            Middleware de comprobacion de los errores  o excepciones
+            </summary>
+        </member>
+        <member name="M:Api.Middlewares.ExceptionHandlingMiddleware.#ctor(Microsoft.AspNetCore.Http.RequestDelegate)">
+            <summary>
+            Constructor
+            </summary>
+        </member>
+        <member name="M:Api.Middlewares.ExceptionHandlingMiddleware.Invoke(Microsoft.AspNetCore.Http.HttpContext)">
+            <summary>
+            Metodo para la generacion de los errores de la aplicacion
+            </summary>
+        </member>
+        <member name="T:Api.Middlewares.JwtMiddleware">
+            <summary>
+            Middleware de comprobacion del token
+            </summary>
+        </member>
+        <member name="M:Api.Middlewares.JwtMiddleware.#ctor(Microsoft.AspNetCore.Http.RequestDelegate)">
+            <summary>
+            Constructor
+            </summary>
+        </member>
+        <member name="M:Api.Middlewares.JwtMiddleware.InvokeAsync(Microsoft.AspNetCore.Http.HttpContext,MediatR.ISender)">
+            <summary>
+            Metodo para validar el token
+            </summary>
+        </member>
+        <member name="T:ApiManejoRRHH.Helpers.AuthorizeAttribute">
+            <summary>
+            Clase validacion de token
+            </summary>
+        </member>
+        <member name="M:ApiManejoRRHH.Helpers.AuthorizeAttribute.OnAuthorization(Microsoft.AspNetCore.Mvc.Filters.AuthorizationFilterContext)">
+            <summary>
+            Metodo que valida el token
+            </summary>
+        </member>
+    </members>
+</doc>
